@@ -1,15 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         Human czlek = new Human("Rysiek", "Wisnia", 1997);
-
-        czlek.setSalary(2000);
+        czlek.setSalary(1000);
+        Car car = new Car("punto", "fiat", 1001);
         System.out.println();
-        czlek.getSalary();
+        czlek.setCar(car);
+        czlek.setSalary(4000);
         System.out.println();
-        czlek.setSalary(2200);
-        System.out.println();
-        czlek.getSalary();
-        System.out.println();
-        czlek.getSalary();
+        czlek.setCar(car);
     }
 }

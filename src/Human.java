@@ -6,7 +6,7 @@ public class Human {
     String lastName;
     Integer yearOfBirth;
     Animal pet;
-    Car car;
+    private Car car;
     private Double salary;
     private Double prevSalary;
     private LocalDateTime salaryGetDate;
@@ -14,6 +14,22 @@ public class Human {
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
+    }
+    public Car getCar(){
+        return car;
+    }
+    public void setCar(Car car){
+        double carValue = car.getValue();
+        if(this.salary >= carValue){
+            System.out.println("Udalo sie kupic samochod");
+            this.car = car;
+        } else if (this.salary >= (carValue / 12)){
+            System.out.println("Udalo sie kupic samochod na kredyt");
+            this.car = car;
+        } else {
+            System.out.println("zapisz się na studia i znajdź nową robotę albo idź po\n" +
+                    "podwyżkę");
+        }
     }
     public void setSalary(double newSalary){
         if (newSalary < 0 ){
@@ -44,8 +60,5 @@ public class Human {
     }
     public void setPet(){
         this.pet = null;
-    }
-    public void setCar(Car car){
-        this.car = car;
     }
 }
