@@ -2,5 +2,16 @@ public class Human {
     String firstName;
     String lastName;
     Animal pet;
-
+    Integer yearOfBirth;
+    public Human(String firstName, String lastName,Integer yearOfBirth){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+    }
+    public void setPet(Animal pet){
+        this.pet = pet;
+    }
+    public void setPet(){
+        this.pet = null;
+    }
 }
