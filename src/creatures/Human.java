@@ -10,7 +10,8 @@ public class Human implements Selleable {
     String firstName;
     String lastName;
     Integer yearOfBirth;
-    Animal pet;
+    Pet pet;
+    Animal animal;
     Double cash = 0.0;
     private Car car;
     private Double salary;
@@ -63,14 +64,23 @@ public class Human implements Selleable {
         System.out.println("Brak daty poprzedniego pobrania wyplaty");
         return this.salary;
     }
-    public void setPet(Animal pet){
+    public void setPet(Pet pet){
         this.pet = pet;
     }
     public void setPet(){
         this.pet = null;
     }
-    public Animal getPet(){
+    public Pet getPet(){
         return this.pet;
+    }
+    public void setAnimal(Animal animal){
+        this.animal = animal;
+    }
+    public void setAnimal(){
+        this.animal = null;
+    }
+    public Animal getAnimal(){
+        return this.animal;
     }
     public void sell(Human seller, Human buyer, Double price){
         if(buyer.cash < price){
