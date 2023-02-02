@@ -1,4 +1,8 @@
-public class Animal {
+package creatures;
+
+import interfaces.Selleable;
+
+public class Animal implements Selleable {
     private static final Double DEFAULT_DOG_WEIGHT = 10.5;
     private static final Double DEFAULT_CAT_WEIGHT = 4.0;
     private static final Double DEFAULT_ELEPHANT_WEIGHT = 700.0;
@@ -18,7 +22,7 @@ public class Animal {
         }
     }
     public String toString(){
-        return " Species: " + species + " Weight: " + weight;
+        return "Species: " + species + " Weight: " + weight;
     }
     public void feed(){
         if(this.isAlive == false){
@@ -37,5 +41,18 @@ public class Animal {
             this.isAlive = false;
             System.out.println("Your pet died because you didn't feed him enough");
         }
+    }
+    public void sell(Human seller, Human buyer, Double price){
+        if(seller.getPet() != this){
+            return;
+        }
+        if(buyer.cash < price){
+            return;
+        }
+        buyer.cash -= price;
+        seller.cash += price;
+        seller.setPet();
+        buyer.setPet(this);
+        System.out.println("Buyer bought " + this);
     }
 }

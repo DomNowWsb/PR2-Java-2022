@@ -1,13 +1,17 @@
+package creatures;
+
 import devices.Car;
+import interfaces.Selleable;
 
 import java.time.LocalDateTime;
 
 
-public class Human {
+public class Human implements Selleable {
     String firstName;
     String lastName;
     Integer yearOfBirth;
     Animal pet;
+    Double cash = 0.0;
     private Car car;
     private Double salary;
     private Double prevSalary;
@@ -17,6 +21,8 @@ public class Human {
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
     }
+    public Double getCash( ){return this.cash;}
+    public void setCash(Double cash){ this.cash = cash;}
     public Car getCar(){
         return car;
     }
@@ -62,5 +68,16 @@ public class Human {
     }
     public void setPet(){
         this.pet = null;
+    }
+    public Animal getPet(){
+        return this.pet;
+    }
+    public void sell(Human seller, Human buyer, Double price){
+        if(buyer.cash < price){
+            return;
+        }
+        if(this instanceof Human){
+            System.out.println("Can't sell humans!");
+        }
     }
 }
