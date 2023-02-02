@@ -17,6 +17,9 @@ public class Animal {
             default : this.weight = DEFAULT_ANIMAL_WEIGHT;
         }
     }
+    public String toString(){
+        return " Species: " + species + " Weight: " + weight;
+    }
     public void feed(){
         if(this.isAlive == false){
             System.out.println("It can't eat because it is not alive");
