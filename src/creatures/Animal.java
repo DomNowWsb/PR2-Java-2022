@@ -1,8 +1,8 @@
 package creatures;
 
-import interfaces.Selleable;
+import interfaces.Sellable;
 
-public abstract class Animal implements Feedable, Selleable  {
+public abstract class Animal implements Feedable, Sellable {
     private static final Double DEFAULT_DOG_WEIGHT = 10.5;
     private static final Double DEFAULT_CAT_WEIGHT = 4.0;
     private static final Double DEFAULT_ELEPHANT_WEIGHT = 700.0;
